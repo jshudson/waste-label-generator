@@ -14,7 +14,15 @@ export default class LabelEditor extends React.Component {
           identifier: "JH0512A",
           description: "Lorem ipsum dolor est ni",
           wasteCodes: "D001 D002 D003",
-          count: 26,
+          count: 4,
+        },
+        {
+          hazardous: false,
+          generator: "J. Hudson",
+          identifier: "JH0512B",
+          description: "Lorem ipsum dolor est ni",
+          wasteCodes: "D001 D002 D003",
+          count: 2,
         },
       ],
     };

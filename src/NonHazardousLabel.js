@@ -1,5 +1,5 @@
 import React from "react";
-import "./HazardousLabel.css";
+import "./NonHazardousLabel.css";
 
 export default function HazardousLabel(props) {
   const identifier = props.labelData.identifier;
@@ -9,14 +9,10 @@ export default function HazardousLabel(props) {
   return (
     <>
       <div className="label-header">
-        <div className="label-hazard-title">HAZARDOUS WASTE</div>
-        <div className="label-date">DATE:</div>
-        <div className="label-date-fill"></div>
+        <div className="label-non-hazard-title">NONHAZARDOUS WASTE</div>
       </div>
       <div className="label-info-block">
-        <div className="label-law-warning">
-          Federal law prohibits improper disposal
-        </div>
+        <div className="label-law-warning">&nbsp;</div>
         <div className="label-regulatory">
           Milliken Chemical Regulatory Affairs, M-209
         </div>
@@ -33,12 +29,8 @@ export default function HazardousLabel(props) {
           <div className="label-description">{description}</div>
         </div>
       </div>
-      <div className="label-code-block">
-        <div className="label-epa-header">EPA Waste Codes</div>
-        <div className="label-waste-codes">{wasteCodes}</div>
-        <div className="label-weight">
-          <div className="label-weight-text">Weight:</div>
-        </div>
+      <div className="label-non-haz-code-block">
+        <div className="label-non-haz-weight"></div>
       </div>
     </>
   );

@@ -1,0 +1,12 @@
+.label-non-hazard-title {
+  color: green;
+  font-size: 14pt;
+}
+.label-non-haz-code-block {
+  grid-area: codes;
+  /* background-color: aqua; */
+  margin: 0.26in 0.11in 0.23in 0;
+  outline: 1px solid black;
+  width: 1.13in;
+  height: 0.72in;
+}
