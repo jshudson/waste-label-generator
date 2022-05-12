@@ -1,110 +1,83 @@
+.label-header {
+  display: flex;
+  grid-area: header;
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: red;
+  /* background-color: blue; */
+  padding-left: 0.1in;
+  height: 0.25in;
+}
+.label-date {
+  margin-left: 0.13in;
+  margin-right: 0.05in;
+}
+.label-date-fill {
+  width: 0.725in;
+  border-bottom: 2px solid red;
+  height: 10.5pt;
+}
+.label-info-block {
+  grid-area: description;
+  /* background-color: green; */
+  padding-left: 0.1in;
+  width: 2.66in;
+  height: 1.75in;
 
+  /* margin-top: 0; */
+}
 
-.label-page {
-    display: grid;
-    grid-template-columns: 4in 4in;
-    padding: 0.5in 0.16in 0.5in 0.16in;
-    border: 1px solid blue;
-    gap: 0 0.19in;
-    page-break-after: always;
-  }
-  
-  .label {
-    height: 2in;
-    outline: 1px solid black;
-    border-radius: 0.16in;
-    display: grid;
-    /* background-color: purple; */
-  
-    gap: 0.0in;
-    grid-template-areas:
-      'header header'
-      'description codes';
-    overflow: hidden;
-  }
-  
-  .label-header {
-    display: flex;
-    grid-area: header;
-    font-size: 10.5pt;
-    font-weight: 600;
-    color: red;
-    /* background-color: blue; */
-    padding-left: 0.1in;
-    height: 0.25in;
-  }
-  .label-date {
-    margin-left: 0.13in;
-    margin-right: 0.05in;
-  }
-  .label-date-fill {
-    width: 0.725in;
-    border-bottom: 2px solid red;
-    height: 10.5pt;
-  }
-  .label-info-block {
-    grid-area: description;
-    /* background-color: green; */
-    padding-left: 0.1in;
-    width: 2.66in;
-    height: 1.75in;
-  
-    /* margin-top: 0; */
-  }
-  
-  .label-info-block>div {
-    margin-bottom: 10pt;
-  
-  }
-  
-  .label-law-warning {
-    color: red;
-    font-size: 7pt;
-    font-weight: 600;
-  }
-  
-  .label-regulatory {
-    font-weight: 600;
-  }
-  
-  .label-code-block {
-    grid-area: codes;
-    /* background-color: aqua; */
-    margin: 0.26in 0.11in 0.23in 0;
-    outline: 1px solid black;
-    width: 1.13in;
-  }
-  
-  .label-epa-header {
-    height: 0.27in;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid black;
-  }
-  
-  .label-waste-codes {
-    height: 0.45in;
-    text-align: center;
-    border-bottom: 1px solid black;
-  }
-  
-  .label-weight {
-    height: 0.54in;
-  }
-  .label-weight-text {
-    padding: 0.05in 0.01in 0.05in 0.1in;
-  }
-  .label-inline-fill {
-    display: flex;
-  
-  }
-  .label-fill {
-    flex-grow: 1;
-    border-bottom: 1px solid black;
-    margin: 0 0.1in;
-    padding: 0 0.1in;
-  }
-  .label-description {
-    margin-right: 0.1in;
-  }
+.label-info-block > div {
+  margin-bottom: 10pt;
+}
+
+.label-law-warning {
+  color: red;
+  font-size: 7pt;
+  font-weight: 600;
+}
+
+.label-regulatory {
+  font-weight: 600;
+}
+
+.label-code-block {
+  grid-area: codes;
+  /* background-color: aqua; */
+  margin: 0.26in 0.11in 0.23in 0;
+  outline: 1px solid black;
+  width: 1.13in;
+}
+
+.label-epa-header {
+  height: 0.27in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.label-waste-codes {
+  height: 0.45in;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.label-weight {
+  height: 0.54in;
+}
+.label-weight-text {
+  padding: 0.05in 0.01in 0.05in 0.1in;
+}
+.label-inline-fill {
+  display: flex;
+}
+.label-fill {
+  flex-grow: 1;
+  border-bottom: 1px solid black;
+  margin: 0 0.1in;
+  padding: 0 0.1in;
+}
+.label-description {
+  margin-right: 0.1in;
+}

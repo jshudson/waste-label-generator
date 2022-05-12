@@ -1,0 +1,13 @@
+.label {
+  height: 2in;
+  outline: 1px solid black;
+  border-radius: 0.16in;
+  display: grid;
+  /* background-color: purple; */
+
+  gap: 0.0in;
+  grid-template-areas:
+    'header header'
+    'description codes';
+  overflow: hidden;
+}

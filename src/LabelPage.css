@@ -1,0 +1,8 @@
+.label-page {
+  display: grid;
+  grid-template-columns: 4in 4in;
+  padding: 0.5in 0.16in 0.5in 0.16in;
+  border: 1px solid blue;
+  gap: 0 0.19in;
+  page-break-after: always;
+}
