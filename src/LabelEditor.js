@@ -14,7 +14,7 @@ export default class LabelEditor extends React.Component {
           identifier: "JH0512A",
           description: "Lorem ipsum dolor est ni",
           wasteCodes: "D001 D002 D003",
-          count: 4,
+          count: 10,
         },
         {
           hazardous: false,
@@ -31,19 +31,16 @@ export default class LabelEditor extends React.Component {
     return this.state.labelData.reduce((prev, curr) => prev + curr.count, 0);
   }
   allocateLabels() {
-    let count = this.labelCount();
     let available = [...this.state.available];
     let labelData = [...this.state.labelData];
-    let availableCount = this.state.available.length;
+
     let availableIndex = 0,
       labelDataIndex = 0,
       labelDataCounter = 0;
-    console.log("allocate");
+
     const allocated = [];
-    let i = 0;
+
     while (labelDataIndex < labelData.length) {
-      i++;
-      console.log(labelDataIndex);
       const currLabelCount = labelData[labelDataIndex].count;
       if (available[availableIndex] != 0) {
         allocated.push(labelDataIndex);

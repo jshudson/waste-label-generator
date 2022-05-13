@@ -6,3 +6,9 @@
   gap: 0 0.19in;
   page-break-after: always;
 }
+@media print {
+  .label-page{
+    padding: 0.5in 0.16in 0 0.16in;
+    border: none;
+  }
+}

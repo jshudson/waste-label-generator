@@ -58,3 +58,9 @@
 .label-description {
   margin-right: 0.1in;
 }
+
+@media print {
+  .label {
+    outline: none;
+  }
+}
