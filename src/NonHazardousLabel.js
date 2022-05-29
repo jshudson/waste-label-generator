@@ -5,7 +5,6 @@ export default function HazardousLabel(props) {
   const identifier = props.labelData.identifier;
   const generator = props.labelData.generator;
   const description = props.labelData.description;
-  const wasteCodes = props.labelData.wasteCodes;
   return (
     <>
       <div className="label-header">
