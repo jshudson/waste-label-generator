@@ -1,10 +1,14 @@
 import './App.css';
 
-import LabelEditor from './LabelEditor';
+import LabelPreview from './LabelPreview';
+import LabelInput from './LabelInput.js';
 
 function App() {
   return (
-    <LabelEditor></LabelEditor>
+    <div id='app'>
+      <LabelInput/>
+      <LabelPreview/>
+    </div>
   );
 }
 
