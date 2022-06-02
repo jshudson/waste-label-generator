@@ -3,9 +3,21 @@ import './LabelInput.css';
 export default class LabelInput extends React.Component {
   constructor(props) {
     super(props);
-    this.props = {numContainers: 1};
-
+    this.handleChange = this.handleChange.bind(this);
   }
+  handleChange(e) {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+    const labelData = {
+      generator: this.props.generator,
+      identifier: this.props.identifier,
+      numContainers: this.props.numContainers
+    };
+    labelData[name] = value
+    this.props.onFieldChange(labelData);
+  }
+
   render() {
     return (
       <form>
@@ -15,6 +27,7 @@ export default class LabelInput extends React.Component {
             name='generator'
             type='text'
             value={this.props.generator}
+            onChange={this.handleChange}
           />
         </label>
         <label>
@@ -23,6 +36,7 @@ export default class LabelInput extends React.Component {
             name='identifier'
             type='text'
             value={this.props.identifier}
+            onChange={this.handleChange}
           />
         </label>
         <label>
@@ -32,6 +46,7 @@ export default class LabelInput extends React.Component {
             type='number'
             min='1'
             value={this.props.numContainers}
+            onChange={this.handleChange}
           />
         </label>
       </form>
