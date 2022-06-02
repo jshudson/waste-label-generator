@@ -6,8 +6,12 @@ import LabelInput from './LabelInput.js';
 function App() {
   return (
     <div id='app'>
-      <LabelInput/>
-      <LabelPreview/>
+      <LabelInput
+        generator='Test'
+        identifier='Test2'
+        numContainers='1'
+      />
+      <LabelPreview />
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default class LabelPreview extends React.Component {
 
     while (labelDataIndex < labelData.length) {
       const currLabelCount = labelData[labelDataIndex].count;
-      if (available[availableIndex] != 0) {
+      if (available[availableIndex] !== 0) {
         allocated.push(labelDataIndex);
         labelDataCounter++;
         if (labelDataCounter >= currLabelCount) {
