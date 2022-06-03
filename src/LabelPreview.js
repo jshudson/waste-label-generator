@@ -1,8 +1,8 @@
 import React from "react";
-import "./LabelEditor.css";
+import "./LabelPreview.css";
 import LabelPage from "./LabelPage";
 
-export default class LabelEditor extends React.Component {
+export default class LabelPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
