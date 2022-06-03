@@ -3,6 +3,7 @@ import "./LabelInput.css";
 export default class LabelInput extends React.Component {
   constructor(props) {
     super(props);
+    console.log('incoming props', props);
     this.state = { ...props.labelData };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,6 +32,8 @@ export default class LabelInput extends React.Component {
     const updatedLabel = { ...this.state};
     this.props.onSubmit(updatedLabel);
     this.props.onLabelChange(direction);
+    this.state = { ...this.props.labelData };
+    console.log('newprops', this.props);
   }
 
   render() {

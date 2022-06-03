@@ -40,30 +40,35 @@ class App extends React.Component {
     const next = current + direction;
     const empty = this.state.labelData[current].empty;
     console.log(count, current, next, empty);
-    if (next < 0) return;
-    if (next >= count && !empty) {
-      console.log("adding label");
-      this.setState({
-        ...this.state,
-        currentLabel: next,
-        labelData: [
-          ...this.state.labelData,
-          {
-            hazardous: true,
-            generator: "New",
-            identifier: "",
-            description: "",
-            wasteCodes: "",
-            count: 1,
-            empty: true,
-          },
-        ],
-      });
+    if (next < 0) {
+      console.log("at first label");
       return;
     }
-    if (empty) {
+    if (next > count - 1) {
+      console.log("need to add label");
+      if (!empty){
+        console.log("can add because label is filled");
+        this.setState({
+          ...this.state,
+          currentLabel: next,
+          labelData: [
+            ...this.state.labelData,
+            {
+              hazardous: true,
+              generator: "New",
+              identifier: "",
+              description: "",
+              wasteCodes: "",
+              count: 1,
+              empty: true,
+            },
+          ],
+        });
+        return;
+      }
       return;
     }
+    console.log('next label is available');
     this.setState({ ...this.state, currentLabel: next });
   }
 
@@ -73,6 +78,7 @@ class App extends React.Component {
     const current = this.state.currentLabel;
     return (
       <div id="app">
+        <div>{current}</div>
         <LabelInput
           labelData={this.state.labelData[current]}
           onSubmit={this.handleSubmit}
