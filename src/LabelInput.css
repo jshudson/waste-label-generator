@@ -3,3 +3,13 @@ form {
   flex-direction: column;
   background-color: aliceblue;
 }
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+.description textarea {
+  font-family: Arial;
+  width: 40ch;
+  resize: none;
+}

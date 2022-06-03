@@ -5,34 +5,17 @@ import LabelPage from "./LabelPage";
 export default class LabelPreview extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       available: [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
-      labelData: [
-        {
-          hazardous: true,
-          generator: "J. Hudson",
-          identifier: "JH0512A",
-          description: "Lorem ipsum dolor est ni",
-          wasteCodes: "D001 D002 D003",
-          count: 10,
-        },
-        {
-          hazardous: false,
-          generator: "J. Hudson",
-          identifier: "JH0512B",
-          description: "Lorem ipsum dolor est ni",
-          wasteCodes: "D001 D002 D003",
-          count: 2,
-        },
-      ],
     };
   }
   labelCount() {
-    return this.state.labelData.reduce((prev, curr) => prev + curr.count, 0);
+    return this.props.labelData.reduce((prev, curr) => prev + curr.count, 0);
   }
   allocateLabels() {
     let available = [...this.state.available];
-    let labelData = [...this.state.labelData];
+    let labelData = [...this.props.labelData];
 
     let availableIndex = 0,
       labelDataIndex = 0,
@@ -74,13 +57,12 @@ export default class LabelPreview extends React.Component {
   }
   render() {
     const allocated = this.allocateLabels();
-    console.log(allocated);
     return (
       <div className="all-pages">
         {allocated.map((e, i) => {
-          console.log("e", e);
+          // console.log("e", e);
           return (
-            <LabelPage labelData={this.state.labelData} allocated={e} key={i} />
+            <LabelPage labelData={this.props.labelData} allocated={e} key={i} />
           );
         })}
       </div>
