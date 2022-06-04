@@ -27,7 +27,6 @@
   padding-left: 0.1in;
   width: 2.66in;
   height: 1.75in;
-
   /* margin-top: 0; */
 }
 
@@ -57,6 +56,9 @@
 }
 .label-description {
   margin-right: 0.1in;
+  width: 42ch;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 @media print {
