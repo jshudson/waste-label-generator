@@ -4,6 +4,13 @@ body {
   font-family: 'Arial';
   /* font-size: 8pt; */
 }
+
+@media print {
+  .label-navigation {
+    display: none;
+  }
+}
+
 @page {
   margin: 0;
 }

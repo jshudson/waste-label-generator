@@ -5,9 +5,9 @@ import LabelPage from "./LabelPage";
 export default class LabelPreview extends React.Component {
   constructor(props) {
     super(props);
-    
+    //available: [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
     this.state = {
-      available: [1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1],
+      available: [].fill(1,10)
     };
   }
   labelCount() {

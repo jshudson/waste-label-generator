@@ -5,19 +5,22 @@ import LabelInput from "./LabelInput.js";
 import React from "react";
 
 class App extends React.Component {
+  emptyLabel = {
+    hazardous: true,
+    generator: "",
+    identifier: "",
+    description: "",
+    wasteCodes: "",
+    count: 1,
+    empty: true,
+  }
   constructor(props) {
     super(props);
     this.state = {
       currentLabel: 0,
       labelData: [
         {
-          hazardous: true,
-          generator: "",
-          identifier: "",
-          description: "",
-          wasteCodes: "",
-          count: 1,
-          empty: true,
+          ...this.emptyLabel
         },
       ],
     };
@@ -34,58 +37,65 @@ class App extends React.Component {
     ];
     this.setState({ ...this.state, labelData: [...newLabels] });
   }
-  handleLabelChange(direction) {
+  handleLabelChange({ target }) {
+    const direction = target.name === "prev" ? -1 : 1;
+
     const count = this.state.labelData.length;
     const current = this.state.currentLabel;
     const next = current + direction;
     const empty = this.state.labelData[current].empty;
-    console.log(count, current, next, empty);
-    if (next < 0) {
-      console.log("at first label");
-      return;
-    }
+
+    if (next < 0) return;
     if (next > count - 1) {
-      console.log("need to add label");
-      if (!empty){
-        console.log("can add because label is filled");
+      if (!empty) {
         this.setState({
           ...this.state,
           currentLabel: next,
           labelData: [
-            ...this.state.labelData,
-            {
-              hazardous: true,
-              generator: "New",
-              identifier: "",
-              description: "",
-              wasteCodes: "",
-              count: 1,
-              empty: true,
-            },
+            ...this.state.labelData, this.emptyLabel,
           ],
         });
         return;
       }
       return;
     }
-    console.log('next label is available');
     this.setState({ ...this.state, currentLabel: next });
   }
 
   render() {
-    console.log("rendering");
-    console.log(this.state);
     const current = this.state.currentLabel;
     return (
       <div id="app">
-        <div>{current}</div>
         <LabelInput
           labelData={this.state.labelData[current]}
           onSubmit={this.handleSubmit}
-          onLabelChange={this.handleLabelChange}
-        />
+          key={current}
+          />
+        <div className="label-navigation">
+          <div>{current}</div>
+          <input
+            name="prev"
+            type="button"
+            value="Prev"
+            onClick={this.handleLabelChange}
+          />
+          <input
+            name="next"
+            type="button"
+            value="Next"
+            onClick={this.handleLabelChange}
+          />
+          <input
+            name="delete"
+            type="button"
+            value="Delete"
+            onClick={this.handleDelete}
+          />
+        </div>
         <LabelPreview labelData={this.state.labelData} />
+
       </div>
+
     );
   }
 }

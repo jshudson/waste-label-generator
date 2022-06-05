@@ -4,12 +4,27 @@ form {
   background-color: aliceblue;
 }
 
+.input-form {
+  display: flex;
+}
+
+.live-label {
+  font-size: 8pt;
+}
+
 .description {
   display: flex;
   flex-direction: column;
 }
+
 .description textarea {
   font-family: Arial;
   width: 40ch;
   resize: none;
+}
+
+@media print {
+  .input-form {
+    display: none;
+  }
 }
