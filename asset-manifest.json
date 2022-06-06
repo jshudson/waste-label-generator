@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/waste-label-generator/static/css/main.e3a0dc2d.css",
+    "main.js": "/waste-label-generator/static/js/main.b92078b9.js",
+    "static/js/787.da3a522f.chunk.js": "/waste-label-generator/static/js/787.da3a522f.chunk.js",
+    "index.html": "/waste-label-generator/index.html",
+    "main.e3a0dc2d.css.map": "/waste-label-generator/static/css/main.e3a0dc2d.css.map",
+    "main.b92078b9.js.map": "/waste-label-generator/static/js/main.b92078b9.js.map",
+    "787.da3a522f.chunk.js.map": "/waste-label-generator/static/js/787.da3a522f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3a0dc2d.css",
+    "static/js/main.b92078b9.js"
+  ]
+}
