@@ -1,3 +1,5 @@
+# Live Version
+Hosted [here](https://jshudson.github.io/waste-label-generator/)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
